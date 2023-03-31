@@ -1,6 +1,6 @@
 Name:		texlive-beamerthemelalic
 Version:	58777
-Release:	1
+Release:	2
 Summary:	A beamer theme for LALIC
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/beamerthemelalic
