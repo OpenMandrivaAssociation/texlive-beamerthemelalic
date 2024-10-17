@@ -3,7 +3,7 @@ Version:	58777
 Release:	2
 Summary:	A beamer theme for LALIC
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/beamerthemelalic
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/beamerthemelalic
 License:	gpl3+
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamerthemelalic.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamerthemelalic.doc.r%{version}.tar.xz
