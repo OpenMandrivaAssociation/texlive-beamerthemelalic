@@ -1,37 +1,24 @@
-Name:		texlive-beamerthemelalic
-Version:	58777
-Release:	2
+%global tl_name beamerthemelalic
+%global tl_revision 58777
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0
+Release:	%{tl_revision}.1
 Summary:	A beamer theme for LALIC
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/beamerthemelalic
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/beamer-contrib/themes/beamerthemelalic
 License:	gpl3+
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamerthemelalic.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamerthemelalic.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/beamerthemelalic.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/beamerthemelalic.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides the beamer theme for LALIC (Laboratorio
-de Linguistica e Inteligencia Computacional of the Federal
-University of Sao Carlos, Brazil).
+This package provides the beamer theme for LALIC (Laboratorio de
+Linguistica e Inteligencia Computacional of the Federal University of
+Sao Carlos, Brazil).
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/beamerthemelalic
-%doc %{_texmfdistdir}/doc/latex/beamerthemelalic
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
